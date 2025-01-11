@@ -20,9 +20,7 @@ async def start_registration(update: Update, context: CallbackContext):
             [InlineKeyboardButton("📚 Модули", callback_data="modules"),
              InlineKeyboardButton("📖 Словарь", callback_data="dictionary")],
             [InlineKeyboardButton("📝 Грамматика", callback_data="grammar"),
-             InlineKeyboardButton("✏️ Практика", callback_data="practice")],
-            [InlineKeyboardButton("🎮 Игры", callback_data="games"),
-             InlineKeyboardButton("📊 Прогресс", callback_data="progress")]
+             InlineKeyboardButton("🎮 Игры", callback_data="games")]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         
@@ -52,9 +50,7 @@ async def process_name(update: Update, context: CallbackContext):
             [InlineKeyboardButton("📚 Модули", callback_data="modules"),
              InlineKeyboardButton("📖 Словарь", callback_data="dictionary")],
             [InlineKeyboardButton("📝 Грамматика", callback_data="grammar"),
-             InlineKeyboardButton("✏️ Практика", callback_data="practice")],
-            [InlineKeyboardButton("🎮 Игры", callback_data="games"),
-             InlineKeyboardButton("📊 Прогресс", callback_data="progress")]
+             InlineKeyboardButton("🎮 Игры", callback_data="games")]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         

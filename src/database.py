@@ -4,8 +4,12 @@ from pathlib import Path
 
 class Database:
     def __init__(self):
+        # Создаём директорию для базы данных, если её нет
+        db_dir = Path(__file__).parent / 'data'
+        db_dir.mkdir(parents=True, exist_ok=True)
+        
         # Путь к файлу базы данных
-        self.db_path = Path(__file__).parent / 'spotlight_bot.db'
+        self.db_path = db_dir / 'spotlight_bot.db'
         self.create_tables()
         
     def get_connection(self):

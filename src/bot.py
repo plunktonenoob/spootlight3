@@ -289,6 +289,21 @@ class SpotlightBot:
             elif section == 'test':
                 await handle_module_test(update, context, module_id)
 
+    async def show_main_menu(self, update: Update, context: CallbackContext):
+        keyboard = [
+            [InlineKeyboardButton("📚 Модули", callback_data="modules"),
+             InlineKeyboardButton("📖 Словарь", callback_data="dictionary")],
+            [InlineKeyboardButton("📝 Грамматика", callback_data="grammar"),
+             InlineKeyboardButton("🎮 Игры", callback_data="games")]
+        ]
+        reply_markup = InlineKeyboardMarkup(keyboard)
+        
+        await update.message.reply_text(
+            "Добро пожаловать в Spotlight 3 Helper!\n"
+            "Выберите раздел для изучения:",
+            reply_markup=reply_markup
+        )
+
 def main() -> None:
     bot = SpotlightBot()
     application = Application.builder().token(BOT_TOKEN).build()
